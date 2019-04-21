@@ -26,6 +26,8 @@ the following platforms:
 - macOS (untested)
 - Windows
 
+**Update:** L05 fork build against **Unreal Engine 4.22** and **NDI SDK 3.8** on Windows.
+
 
 ## Prerequisites
 
