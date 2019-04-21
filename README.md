@@ -19,14 +19,7 @@ that are not yet available in the UE4 Master branch.
 
 ## Supported Platforms
 
-**Update:** L05 fork build against **Unreal Engine 4.22** and **NDI SDK 3.8** on Windows but not Linux or macOS.
-
-This plug-in was last built against **Unreal Engine 4.19** and **NDI SDK 3** on
-the following platforms:
-
-- Linux (untested)
-- macOS (untested)
-- Windows
+This fork has been built against **Unreal Engine 4.22** and **NDI SDK 3.8** on Windows but not Linux or macOS.
 
 
 ## Prerequisites
