@@ -60,6 +60,15 @@ class NDIMEDIA_API UNdiMediaSource
 	GENERATED_BODY()
 
 public:
+	// Redefined from Processing.NDI.Recv.h to eliminate error from NDI 3.8.
+	//  TODO: find a better solution?
+	enum NDIlib_recv_bandwidth_e : int32_t
+	{
+		NDIlib_recv_bandwidth_metadata_only = -10, // Receive metadata.
+		NDIlib_recv_bandwidth_audio_only = 10, // Receive metadata, audio.
+		NDIlib_recv_bandwidth_lowest = 0,  // Receive metadata, audio, video at a lower bandwidth and resolution.
+		NDIlib_recv_bandwidth_highest = 100 // Receive metadata, audio, video at full resolution.
+	};
 
 	/**
 	 * Reference level for received audio (in dB; default = 5).

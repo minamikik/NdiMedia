@@ -265,7 +265,7 @@ bool FNdiMediaPlayer::Open(const FString& Url, const IMediaOptions* Options)
 	{
 		if (SourceStr.Find(TEXT(":")) != INDEX_NONE)
 		{
-			Source.p_ip_address = TCHAR_TO_ANSI(*SourceStr);
+			Source.p_url_address = TCHAR_TO_ANSI(*SourceStr);
 			Source.p_ndi_name = nullptr;
 		}
 		else
@@ -275,12 +275,12 @@ bool FNdiMediaPlayer::Open(const FString& Url, const IMediaOptions* Options)
 				SourceStr.ReplaceInline(TEXT("localhost"), FPlatformProcess::ComputerName());
 			}
 
-			Source.p_ip_address = nullptr;
+			Source.p_url_address = nullptr;
 			Source.p_ndi_name = TCHAR_TO_ANSI(*SourceStr);
 		}
 	}
 
-	NDIlib_recv_create_t RcvCreateDesc;
+	NDIlib_recv_create_v3_t RcvCreateDesc;
 	{
 		RcvCreateDesc.source_to_connect_to = Source;
 		RcvCreateDesc.color_format = ColorFormat;
@@ -292,7 +292,7 @@ bool FNdiMediaPlayer::Open(const FString& Url, const IMediaOptions* Options)
 	{
 		FScopeLock Lock(&CriticalSection);
 
-		ReceiverInstance = FNdi::Lib->NDIlib_recv_create_v2(&RcvCreateDesc);
+		ReceiverInstance = FNdi::Lib->NDIlib_recv_create_v3(&RcvCreateDesc);
 	}
 
 	if (ReceiverInstance == nullptr)

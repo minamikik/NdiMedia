@@ -25,7 +25,7 @@ bool FNdi::Initialize()
 #if NDIMEDIA_DLL_PLATFORM
 	// determine runtime library path
 	TCHAR RedistDir[4096];
-	FPlatformMisc::GetEnvironmentVariable(ANSI_TO_TCHAR(NDILIB_REDIST_FOLDER), RedistDir, ARRAY_COUNT(RedistDir));
+	FPlatformMisc::GetEnvironmentVariable(ANSI_TO_TCHAR(NDILIB_REDIST_FOLDER));
 	const FString LibPath = FPaths::Combine(RedistDir, ANSI_TO_TCHAR(NDILIB_LIBRARY_NAME));
 
 	if (!FPaths::FileExists(LibPath))
