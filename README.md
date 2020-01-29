@@ -61,3 +61,8 @@ source code from GitHub is required for this.
 * [NewTek NDI Redist Download](http://new.tk/NDIRedistV3)
 * [NewTek NDI Homepage](http://newtek.com/ndi.html)
 * [Introduction to UE4 Plugins](https://wiki.unrealengine.com/An_Introduction_to_UE4_Plugins)
+
+
+Tested by @minamikik  
+UE4.23.1 working.  
+UE4.24.2 working.  
